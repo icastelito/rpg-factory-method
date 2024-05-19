@@ -1,82 +1,79 @@
-# RPGFactoryMethod README
+# RPGFactoryMethod
 
-## DescriÁ„o
+## Aluno: Icaro Castelo Branco da Costa
 
-Este projeto È uma implementaÁ„o do padr„o de design Factory Method em C# dentro do contexto de um jogo de RPG. Ele define uma estrutura para criar diferentes tipos de desafios (como monstros e armadilhas) sem acoplar o cÛdigo do jogo ‡s classes concretas desses desafios. O cÛdigo demonstra como usar classes abstratas e heranÁa para criar uma soluÁ„o extensÌvel e modular.
+## Descri√ß√£o
 
-## Estrutura do CÛdigo
+Este projeto √© uma implementa√ß√£o do padr√£o de design Factory Method em C# dentro do contexto de um jogo de RPG. Ele define uma estrutura para criar alguns tipos de desafios (como monstros e armadilhas) sem acoplar o c√≥digo do jogo √†s classes concretas desses desafios.
+## Estrutura do C√≥digo
 
-O cÛdigo È composto por v·rias classes organizadas da seguinte forma:
+O c√≥digo √© composto por v√°rias classes organizadas da seguinte forma:
 
 ### Classes Abstratas
 
 1. **Desafio**:
    - Classe base abstrata que representa um desafio no jogo.
-   - ContÈm uma propriedade abstrata `Nome` e um mÈtodo abstrato `Executar`.
+   - Cont√©m uma propriedade abstrata `Nome` e um m√©todo abstrato `Executar`.
 
 2. **FabricaDesafio**:
-   - Classe base abstrata para as f·bricas de desafios.
-   - Define um mÈtodo abstrato `CriarDesafio` que retorna um objeto do tipo `Desafio`.
+   - Classe base abstrata para as f√°bricas de desafios.
+   - Define um m√©todo abstrato `CriarDesafio` que retorna um objeto do tipo `Desafio`.
 
 ### Classes Concretas
 
 1. **Monstro**:
    - Subclasse concreta de `Desafio`.
-   - Implementa a propriedade `Nome` e o mÈtodo `Executar`, que exibe uma mensagem indicando que um monstro apareceu.
+   - Implementa a propriedade `Nome` e o m√©todo `Executar`, que exibe uma mensagem indicando que um monstro apareceu.
 
 2. **Armadilha**:
    - Subclasse concreta de `Desafio`.
-   - Implementa a propriedade `Nome` e o mÈtodo `Executar`, que exibe uma mensagem indicando que uma armadilha foi acionada.
+   - Implementa a propriedade `Nome` e o m√©todo `Executar`, que exibe uma mensagem indicando que uma armadilha foi acionada.
 
 3. **FabricaMonstro**:
    - Subclasse concreta de `FabricaDesafio`.
-   - Implementa o mÈtodo `CriarDesafio`, retornando uma nova inst‚ncia de `Monstro`.
+   - Implementa o m√©todo `CriarDesafio`, retornando uma nova inst√¢ncia de `Monstro`.
 
 4. **FabricaArmadilha**:
    - Subclasse concreta de `FabricaDesafio`.
-   - Implementa o mÈtodo `CriarDesafio`, retornando uma nova inst‚ncia de `Armadilha`.
+   - Implementa o m√©todo `CriarDesafio`, retornando uma nova inst√¢ncia de `Armadilha`.
 
 ### Classe Principal
 
 1. **Program**:
-   - Classe principal que contÈm o mÈtodo `Main`, ponto de entrada do programa.
-   - Cria inst‚ncias das f·bricas de desafios (`FabricaMonstro` e `FabricaArmadilha`), utiliza essas f·bricas para criar desafios especÌficos, e executa esses desafios, exibindo mensagens no console.
+   - Classe principal que cont√©m o m√©todo `Main`, ponto de entrada do programa.
+   - Cria inst√¢ncias das f√°bricas de desafios (`FabricaMonstro` e `FabricaArmadilha`), utiliza essas f√°bricas para criar desafios espec√≠ficos, e executa esses desafios, exibindo mensagens no console.
 
 ## Passo a Passo
 
 1. **Definir a classe base Desafio**:
-   - `Desafio` È uma classe abstrata que contÈm uma propriedade abstrata `Nome` e um mÈtodo abstrato `Executar`.
+   - `Desafio` √© uma classe abstrata que cont√©m uma propriedade abstrata `Nome` e um m√©todo abstrato `Executar`.
 
 2. **Criar subclasses concretas de Desafio**:
-   - `Monstro` e `Armadilha` s„o subclasses concretas de `Desafio` que implementam a propriedade `Nome` e o mÈtodo `Executar` com mensagens especÌficas.
+   - `Monstro` e `Armadilha` s√£o subclasses concretas de `Desafio` que implementam a propriedade `Nome` e o m√©todo `Executar` com mensagens espec√≠ficas.
 
 3. **Definir a classe base FabricaDesafio**:
-   - `FabricaDesafio` È uma classe abstrata com um mÈtodo abstrato `CriarDesafio` que retorna um objeto do tipo `Desafio`.
+   - `FabricaDesafio` √© uma classe abstrata com um m√©todo abstrato `CriarDesafio` que retorna um objeto do tipo `Desafio`.
 
 4. **Criar subclasses concretas de FabricaDesafio**:
-   - `FabricaMonstro` e `FabricaArmadilha` s„o subclasses concretas de `FabricaDesafio` que implementam o mÈtodo `CriarDesafio` para retornar inst‚ncias de `Monstro` e `Armadilha`, respectivamente.
+   - `FabricaMonstro` e `FabricaArmadilha` s√£o subclasses concretas de `FabricaDesafio` que implementam o m√©todo `CriarDesafio` para retornar inst√¢ncias de `Monstro` e `Armadilha`, respectivamente.
 
 5. **Implementar a classe Program**:
-   - No mÈtodo `Main`, instanciar `FabricaMonstro` e `FabricaArmadilha`.
-   - Utilizar essas inst‚ncias para criar objetos `Monstro` e `Armadilha`.
-   - Chamar o mÈtodo `Executar` em cada um desses objetos para exibir as mensagens no console.
+   - No m√©todo `Main`, instanciar `FabricaMonstro` e `FabricaArmadilha`.
+   - Utilizar essas inst√¢ncias para criar objetos `Monstro` e `Armadilha`.
+   - Chamar o m√©todo `Executar` em cada um desses objetos para exibir as mensagens no console.
 
-## ExecuÁ„o
+## Execu√ß√£o
 
 Para executar o programa, siga os passos abaixo:
 
-1. Compile o cÛdigo utilizando um compilador C# (por exemplo, atravÈs do Visual Studio ou linha de comando com `csc`).
-2. Execute o programa compilado. VocÍ ver· as seguintes mensagens no console:
+1. Compile o c√≥digo utilizando um compilador C# (por exemplo, atrav√©s do Visual Studio ou linha de comando com `csc`).
+2. Execute o programa compilado. Voc√™ ver√° as seguintes mensagens no console:
 
 ```
 Desafio criado: Monstro
 Um monstro apareceu! Prepare-se para a batalha!
 Desafio criado: Armadilha
-VocÍ caiu em uma armadilha! Tente escapar!
+Voc√™ caiu em uma armadilha! Tente escapar!
 ```
 
 Essas mensagens indicam que os desafios foram criados e executados corretamente.
-
-## Conclus„o
-
-Este projeto demonstra o uso do padr„o Factory Method para criar uma estrutura de jogo extensÌvel, onde novos tipos de desafios podem ser adicionados facilmente sem modificar o cÛdigo existente. Isso promove um design limpo e modular, seguindo os princÌpios de programaÁ„o orientada a objetos.
