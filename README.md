@@ -1,8 +1,8 @@
-# RPGFactoryMethod
+# RPG Factory Method
 
 ## Aluno: Icaro Castelo Branco da Costa
 
-## Link: https://github.com/icastelito/APS-MAP/tree/main
+## Link: https://github.com/icastelito/rpg-factory-method/tree/main
 
 ## Descrição
 
